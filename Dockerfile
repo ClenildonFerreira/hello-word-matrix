@@ -7,6 +7,6 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-EXPOSE 4200
+EXPOSE 8082
 
-CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "8082"]

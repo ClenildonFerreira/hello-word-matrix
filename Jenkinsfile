@@ -35,11 +35,11 @@ pipeline {
             steps {
                 echo 'Deploying application...'
                 script {
-                    bat '''
+                    bat """
                         docker stop matrix-hello-world || true
                         docker rm matrix-hello-world || true
-                        docker run -d --name matrix-hello-world -p 4200:80 %DOCKER_IMAGE%:%DOCKER_TAG%
-                    '''
+                        docker run -d --name matrix-hello-world -p 8082:8082 ${DOCKER_IMAGE}:${DOCKER_TAG}
+                    """
                 }
             }
         }
